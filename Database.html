@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Database Table</title>
+<style>
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #008000;
+}
+
+.container {
+  border: 2px solid #333;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #90EE90;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+  position: relative; /* Agar kita bisa memposisikan icon secara absolut */
+}
+
+.back-icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  cursor: pointer; /* Mengubah kursor menjadi tangan saat di hover */
+  font-size: 20px; /* Ukuran icon */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <span class="back-icon" onclick="window.location.href='home.html';">&#8592;</span>  <!-- Icon panah kiri -->
+  <h2>Database</h2>
+  <table>
+    <tr>
+      <th>Nama Pengguna</th>
+      <th>Umur/ID</th>
+      <th>Email</th>
+      <th>Password</th>
+    </tr>
+    <tr>
+      <td>Maulana Sidik</td>
+      <td>24</td>
+      <td>maulanasidik@gmail.com</td>
+      <td>[Terlindungi]</td>
+    </tr>
+    <tr>
+      <td>Risna Belani</td>
+      <td>23</td>
+      <td>risnabelani@gmail.com</td>
+      <td>[Terlindungi]</td>
+    </tr>
+    <tr>
+      <td>Ilham Malik</td>
+      <td>24</td>
+      <td>ilhammalik@gmail.com</td>
+      <td>[Terlindungi]</td>
+    </tr>
+    <tr>
+      <td>Junaidi</td>
+      <td>24</td>
+      <td>junaidi@gmail.com</td>
+      <td>[Terlindungi]</td>
+    </tr>
+    <tr>
+      <td>Ilham Maulana Furgon</td>
+      <td>20</td>
+      <td>maulanakitorikarin@gmail.com</td>
+      <td>[Terlindungi]</td>
+    </tr>
+  </table>
+</div>
+
+</body>
+</html>

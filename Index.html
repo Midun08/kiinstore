@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Top Up Diamond</title>
+<style>
+body {
+  font-family: sans-serif;
+  background-color: #228B22;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  position: relative; /* Added for absolute positioning of notification */
+}
+.container {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+select, input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+}
+button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+#qr-code {
+  width: 200px;
+  height: 200px;
+  border: 1px solid white;
+  margin-top: 20px;
+  display: none;
+}
+h1 {
+  margin-bottom: 20px;
+}
+#logo {
+  max-width: 200px;
+  max-height: 100px;
+  margin-bottom: 20px;
+}
+#notification {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  display: none; /* Initially hidden */
+  z-index: 1000; /* Ensure it's on top */
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <img id="logo" src="logo.png" alt="Logo">
+  <h1>Top Up Diamond Dota</h1>
+
+  <label for="user_id">ID Pengguna:</label>
+  <input type="text" id="user_id" required>
+
+  <label for="diamond_amount">Jumlah Diamond:</label>
+  <select id="diamond_amount">
+    <option value="100,10000">100 Diamond (Rp 10.000)</option>
+    <option value="500,50000">500 Diamond (Rp 50.000)</option>
+    <option value="1000,100000">1000 Diamond (Rp 100.000)</option>
+    <option value="2000,200000">2000 Diamond (Rp 200.000)</option>
+    <option value="5000,500000">5000 Diamond (Rp 500.000)</option>
+  </select>
+
+  <button onclick="showNotification()">Top Up</button>
+
+  <div id="qr-code">
+    <p>Kode QR akan ditampilkan di sini setelah Anda menekan tombol "Top Up".</p>
+    <p>Silakan transfer ke Dana 082120687897</p>
+  </div>
+  <div id="notification"></div> </div>
+
+<script>
+function showNotification() {
+  const selectedOption = document.getElementById("diamond_amount").selectedOptions[0];
+  const [diamondAmount, price] = selectedOption.value.split(",");
+  const notification = document.getElementById("notification");
+  notification.innerHTML = `Silakan transfer <strong>Rp ${price}</strong> ke Dana 082120687897 untuk mendapatkan ${diamondAmount} Diamond.`;
+  notification.style.display = "block";
+  setTimeout(() => {
+    notification.style.display = "none";
+  }, 5000); // Hide notification after 5 seconds
+}
+</script>
+
+</body>
+</html>
